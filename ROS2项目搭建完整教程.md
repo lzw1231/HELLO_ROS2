@@ -119,11 +119,11 @@ mkdir -p cmake
 
 ### 4\.2 通用编译配置脚本 ros2\_cxx\_setup\.cmake
 
-**文件路径**：`HELLO_ROS2/cmake/ros2_cxx_setup.cmake`
+**文件路径**：`HELLO_ROS2/cmake/ros2_cpp_setup.cmake`
 
 ```cmake
 # ============================================================================
-# ros2_cxx_setup.cmake
+# ros2_cpp_setup.cmake
 # 为 ROS2 C++ 包提供通用编译配置：
 #   - 设置 C23 / C++26 标准和编译器警告
 #   - 集成 ament_cmake 核心能力
@@ -133,7 +133,7 @@ mkdir -p cmake
 
 # 防止配置文件重复包含
 if (__ADD_CXX_NODE_INCLUDED)
-    message(STATUS "[ros2_cxx_setup.cmake] 已经包含过，跳过重复包含")
+    message(STATUS "[ros2_cpp_setup.cmake] 已经包含过，跳过重复包含")
     return()
 endif ()
 set(__ADD_CXX_NODE_INCLUDED TRUE)
@@ -169,10 +169,10 @@ endif ()
 
 # ----------------------------------------------------------------------------
 # 4. 通用节点编译函数封装
-# 用法：ros2_cxx_setup(<节点名> DEPENDS 依赖1 依赖2 ...)
+# 用法：ros2_cpp_setup(<节点名> DEPENDS 依赖1 依赖2 ...)
 # 说明：调用前需提前find_package引入对应依赖包
 # ----------------------------------------------------------------------------
-function(ros2_cxx_setup NODE_NAME)
+function(ros2_cpp_setup NODE_NAME)
     cmake_parse_arguments(NODE "" "" "DEPENDS" ${ARGN})
 
     # 定义节点源码文件路径
@@ -230,13 +230,13 @@ option(BUILD_TESTING "Build tests" OFF)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../cmake")
 
 # 引入通用ROS2 C++编译配置
-include(ros2_cxx_setup)
+include(ros2_cpp_setup)
 
 # 显式声明项目依赖
 find_package(rclcpp REQUIRED)          # ROS2 C++核心客户端库
 
 # 调用通用函数编译节点，绑定依赖
-ros2_cxx_setup(cxx_node DEPENDS rclcpp)
+ros2_cpp_setup(cxx_node DEPENDS rclcpp)
 
 # 生成ROS2功能包描述文件
 ament_package()
@@ -389,7 +389,7 @@ CLion 本地默认索引与 Clang\+Ninja 编译链不匹配时，会出现头文
 ```plain
 HELLO_ROS2/
 ├── cmake/
-│   └── ros2_cxx_setup.cmake      # 通用C++编译工具封装
+│   └── ros2_cpp_setup.cmake      # 通用C++编译工具封装
 └── src/
     ├── py_pkg/                   # Python功能包
     │   └── py_pkg/

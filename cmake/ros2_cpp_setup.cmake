@@ -1,5 +1,5 @@
 # ============================================================================
-# ros2_cxx_setup.cmake
+# ros2_cpp_setup.cmake
 # 为 ROS2 C++ 包提供：
 #   - 设置 C23 / C++26 标准和编译器警告
 #   - 查找 ament_cmake
@@ -9,7 +9,7 @@
 
 # 防止重复包含，并输出提示信息
 if (__ADD_CXX_NODE_INCLUDED)
-    message(STATUS "[ros2_cxx_setup.cmake] 已经包含过，跳过重复包含")
+    message(STATUS "[ros2_cpp_setup.cmake] 已经包含过，跳过重复包含")
     return()
 endif ()
 set(__ADD_CXX_NODE_INCLUDED TRUE)
@@ -42,11 +42,11 @@ if (BUILD_TESTING)
 endif ()
 
 # ----------------------------------------------------------------------------
-# 4. 定义函数 ros2_cxx_setup
-# 用法：ros2_cxx_setup(<节点名> DEPENDS 依赖1 依赖2 ...)
+# 4. 定义函数 ros2_cpp_setup
+# 用法：ros2_cpp_setup(<节点名> DEPENDS 依赖1 依赖2 ...)
 # 说明：用户必须在调用前通过 find_package 引入所有 DEPENDS 中列出的包
 # ----------------------------------------------------------------------------
-function(ros2_cxx_setup NODE_NAME)
+function(ros2_cpp_setup NODE_NAME)
     cmake_parse_arguments(NODE "" "" "DEPENDS" ${ARGN})
 
     set(SOURCE_FILE src/${NODE_NAME}.cpp)
