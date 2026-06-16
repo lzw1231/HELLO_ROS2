@@ -314,7 +314,7 @@ colcon build \
         -DCMAKE_LINKER=/usr/bin/ld.lld-22 \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
         -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-        -DCMAKE_CXX_FLAGS="-stdlib=libc++ -fopenmp" \
+        -DCMAKE_CXX_FLAGS="-fopenmp" \
         -DCMAKE_C_FLAGS="-fopenmp"
 
 # 构建失败检查
