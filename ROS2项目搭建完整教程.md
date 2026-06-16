@@ -306,14 +306,16 @@ echo -e "${BLUE}→ Building...${NC}"
 colcon build \
     --base-paths src \
     --symlink-install \
-    --event-handlers status+ \
+    --event-handlers console_direct+ \
     --cmake-args \
         -G Ninja \
-        -DCMAKE_C_COMPILER=clang \
-        -DCMAKE_CXX_COMPILER=clang++ \
-        -DCMAKE_LINKER=/usr/bin/ld.lld-18 \
+        -DCMAKE_C_COMPILER=/usr/bin/clang-22 \
+        -DCMAKE_CXX_COMPILER=/usr/bin/clang++-22 \
+        -DCMAKE_LINKER=/usr/bin/ld.lld-22 \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-        -DCMAKE_BUILD_TYPE=RelWithDebInfo
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_CXX_FLAGS="-stdlib=libc++ -fopenmp" \
+        -DCMAKE_C_FLAGS="-fopenmp"
 
 # 构建失败检查
 if [ $? -ne 0 ]; then
