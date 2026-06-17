@@ -117,7 +117,7 @@ int main(int argc, char * argv[])
 mkdir -p cmake
 ```
 
-### 4\.2 通用编译配置脚本 ros2\_cxx\_setup\.cmake
+### 4\.2 通用编译配置脚本 ros2\_cpp\_setup\.cmake
 
 **文件路径**：`HELLO_ROS2/cmake/ros2_cpp_setup.cmake`
 
