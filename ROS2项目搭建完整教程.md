@@ -27,7 +27,7 @@ ros2 pkg create --build-type ament_python \
 py_pkg
 ```
 
-### 2\.2 创建 Cpp 功能包（cxx\_pkg）
+### 2\.2 创建 C++ 功能包（cpp\_pkg）
 
 ```bash
 ros2 pkg create --build-type ament_cmake \
