@@ -19,8 +19,7 @@ mkdir -p HELLO_ROS2/src && cd HELLO_ROS2/src
 ```bash
 cd src
 ros2 pkg create --build-type ament_python \
-  --license Apache-2.0 \
-  --node-name py_node \
+  --license Apache-2.0 \  
   --dependencies rclpy \
   --maintainer-name "lzw1231" \
   --maintainer-email "lzw1231@sina.com" \
@@ -32,8 +31,7 @@ ros2 pkg create --build-type ament_python \
 
 ```bash
 ros2 pkg create --build-type ament_cmake \
-  --license Apache-2.0 \
-  --node-name cpp_node \
+  --license Apache-2.0 \  
   --dependencies rclcpp \
   --maintainer-name "lzw1231" \
   --maintainer-email "lzw1231@sina.com" \
