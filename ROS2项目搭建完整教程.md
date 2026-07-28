@@ -23,16 +23,7 @@ ros2 pkg create --build-type ament_python --license Apache-2.0 --dependencies rc
 ### 2\.2 创建 C\+\+ 功能包（cxx\_pkg）
 
 ```bash
-ros2 pkg create --build-type ament_cmake \
-  --license Apache-2.0 \  
-  --dependencies rclcpp \
-  --maintainer-name "lzw1231" \
-  --maintainer-email "lzw1231@sina.com" \
-  --description "A C++ ROS2 node" \
-  cpp_pkg
-
-# 返回工作空间根目录
-cd ..
+ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies rclcpp --maintainer-name "lzw1231" --maintainer-email "lzw1231@sina.com" --description "A C++ ROS2 node" cpp_pkg
 ```
 
 ## 三、编写自定义 ROS2 节点业务代码
