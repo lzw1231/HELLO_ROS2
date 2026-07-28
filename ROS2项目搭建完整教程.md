@@ -17,13 +17,27 @@ mkdir -p HELLO_ROS2/src && cd HELLO_ROS2/src
 ### 2\.1 创建 Python 功能包（py\_pkg）
 
 ```bash
-ros2 pkg create --build-type ament_python --license Apache-2.0 --dependencies rclpy --maintainer-name "lzw1231" --maintainer-email "lzw1231@sina.com" --description "A Python ROS2 node" py_pkg
+ros2 pkg create --build-type ament_python \
+--license Apache-2.0 \
+--dependencies rclpy \
+--maintainer-name "lzw1231" \
+--maintainer-email "lzw1231@sina.com" \
+--description "A Python ROS2 node" \
+--node-name my_py_node \
+py_pkg
 ```
 
 ### 2\.2 创建 C\+\+ 功能包（cxx\_pkg）
 
 ```bash
-ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies rclcpp --maintainer-name "lzw1231" --maintainer-email "lzw1231@sina.com" --description "A C++ ROS2 node" cpp_pkg
+ros2 pkg create --build-type ament_cmake \
+--license Apache-2.0 \
+--dependencies rclcpp \
+--maintainer-name "lzw1231" \
+--maintainer-email "lzw1231@sina.com" \
+--description "A C++ ROS2 node" \
+--node-name my_cpp_node \
+cpp_pkg
 ```
 
 ## 三、编写自定义 ROS2 节点业务代码
