@@ -10,7 +10,7 @@
 mkdir -p HELLO_ROS2/src && cd HELLO_ROS2/src
 ```
 
-## 二、创建 Python / C\+\+ 标准化功能包
+## 二、创建 Python / Cpp 标准化功能包
 
 在工作空间 `src` 目录下，分别创建遵循 ROS2 官方规范的 Python、C\+\+ 功能包，工具自动生成基础目录、配置文件与默认节点模板。
 
@@ -27,7 +27,7 @@ ros2 pkg create --build-type ament_python \
 py_pkg
 ```
 
-### 2\.2 创建 C\+\+ 功能包（cxx\_pkg）
+### 2\.2 创建 Cpp 功能包（cxx\_pkg）
 
 ```bash
 ros2 pkg create --build-type ament_cmake \
