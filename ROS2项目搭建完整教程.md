@@ -33,7 +33,7 @@ ros2 pkg create --build-type ament_python \
 ```bash
 ros2 pkg create --build-type ament_cmake \
   --license Apache-2.0 \
-  --node-name cxx_node \
+  --node-name cpp_node \
   --dependencies rclcpp \
   --maintainer-name "lzw1231" \
   --maintainer-email "lzw1231@sina.com" \
@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
 ### 3\.2 C\+\+ 节点
 
-**文件路径**：`HELLO_ROS2/src/cxx_pkg/src/cxx_node.cpp`
+**文件路径**：`HELLO_ROS2/src/cpp_pkg/src/cpp_node.cpp`
 
 ```cpp
 #include <rclcpp/rclcpp.hpp>
