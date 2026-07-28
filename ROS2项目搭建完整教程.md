@@ -21,6 +21,7 @@ cd src
 ros2 pkg create --build-type ament_python \
   --license Apache-2.0 \
   --node-name py_node \
+  --dependencies rclpy \
   --maintainer-name "lzw1231" \
   --maintainer-email "lzw1231@sina.com" \
   --description "A Python ROS2 node" \
@@ -37,7 +38,7 @@ ros2 pkg create --build-type ament_cmake \
   --maintainer-name "lzw1231" \
   --maintainer-email "lzw1231@sina.com" \
   --description "A C++ ROS2 node" \
-  cxx_pkg
+  cpp_pkg
 
 # 返回工作空间根目录
 cd ..
